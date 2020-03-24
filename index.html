@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Javascript Quiz</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="headerDiv">
+            <div class="col-6">
+                <h1 display-3>Quiz Game</h1>
+                <div id="instructions">
+                    <p>Quiz time! Please answer the following multiple choice questions. If you get one wrong 10 seconds
+                        will be deducted from the remaining time! Good luck!</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- will not display until startquiz function starts display none css - js= display block at start of func -->
+        <div class="row" id="messageDiv">
+            <div class="col-6">
+                <p id="message">
+                    js rendered message Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repudiandae
+                    dolore facilis nemo, officiis aliquam.
+                </p>
+            </div>
+
+            <div class="col-6">
+                <p>Time remaining: <span class="shotClock"></span></p>
+            </div>
+        </div>
+        <div class="row" id="quizDiv">
+            <div class="col-12" id="quiz">
+                js to render question and choices and then appends to html. after question and choices is answered then
+                .innerHTML set it to empty string clear innerHTML
+            </div>
+        </div>
+
+        <div class="row" id="controlDiv">
+            <div class="col-12">
+                <button class="btn btn-success" id="startBtn">Start Quiz</button>
+
+            </div>
+        </div>
+
+        <div class="row" id="scoreboardDiv">
+            <div class="col-12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Name:
+                            </td>
+                            <td>
+                                Score:
+                            </td>
+                            <td>
+                                Time and Date:
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- 
+       1. Header section - game instructions, page title.
+       2. Message div -  1. div for message output and another (2) div for time -----answer feedback with time remaining - comminicating message to user dynamic
+       3. Quiz div - blank div render Q&A in JS 
+       4. Controls div - including start button, view high scores button,  saved score - user clicks
+       5. Print scoreboard div 
+    -->
+
+
+
+
+
+
+    append creating rendering html
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

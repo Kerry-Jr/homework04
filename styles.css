@@ -1,8 +1,11 @@
-#headerDiv{
-    border: 2px solid red;
-    margin-bottom: 5rem;
+#headerDiv {
+  border: 2px solid red;
+  margin-bottom: 5rem;
 }
 .col-6 {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
+#quizDiv {
+  border: 2px solid blue;
+}

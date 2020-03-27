@@ -1,11 +1,16 @@
+var userName = "";
 var startBtn = document.querySelector("#startBtn");
+var saveBtn = document.querySelector("#saveBtn");
 var timer = document.querySelector(".shotClock");
 var score = 0;
 var shotClock = 90;
-startBtn.addEventListener("click", startTime);
+var updateScore = document.querySelector("#newScore");
+var savedName = document.querySelector("#savedName");
+var currentScore = document.querySelector("#currentScore");
+var currentName = document.querySelector("#currentName");
 
-
-
+startBtn.addEventListener("click", startQuiz);
+saveBtn.addEventListener("click", saveScore);
 
 
 var questions = [
@@ -73,42 +78,42 @@ var questions = [
   }
 ];
 
-// for ( i = 0; i <questions.length; i++){
-//   console.log(questions[i]);
-// }
 
-// for (key in questions) {
-//   console.log(questions[key]);
-// }
 
 var $quiz = document.getElementById("quiz");
 var $div = document.getElementById("message");
 
-// for(var i = 0; i < questions.length; i++) {
-//   var $pEl = document.createElement("p");
-//   $pEl.textContent = questions[i].question;
-//   $div.appendChild($pEl);
-// }
+
 
 var qIndex = 0;
 function askQuestion() {
-  var currentQuestion = questions[qIndex].question;
-  var questionBtn = document.createElement("button");
-  questionBtn.textContent = currentQuestion;
-  questionBtn.className = "btn btn-success btn-lg btn-block qBtn";
-  $quiz.appendChild(questionBtn);
-  var currentChoices = questions[qIndex].choices;
-  for (var i = 0; i < currentChoices.length; i++) {
-    var choiceBtn = document.createElement("button");
-    choiceBtn.textContent = currentChoices[i];
-    choiceBtn.className = "btn btn-outline-danger btn-lg btn-block answerBtn";
-    $quiz.appendChild(choiceBtn);
+  $quiz.innerHTML = "";
+
+
+  if (!questions[qIndex]) {
+    gameOver();
+  } else {
+    var currentQuestion = questions[qIndex].question;
+    var questionBtn = document.createElement("button");
+    questionBtn.textContent = currentQuestion;
+    questionBtn.className = "btn btn-success btn-lg btn-block qBtn";
+    $quiz.appendChild(questionBtn);
+    var currentChoices = questions[qIndex].choices;
+      for (var i = 0; i < currentChoices.length; i++) {
+        var choiceBtn = document.createElement("button");
+        choiceBtn.textContent = currentChoices[i];
+        choiceBtn.className = "btn btn-outline-danger btn-lg btn-block answerBtn";
+        $quiz.appendChild(choiceBtn);
+    }
+
   }
 }
 
-askQuestion();
 
-$quiz.addEventListener("click", function(event) {
+
+
+
+$quiz.addEventListener("click", function (event) {
   event.preventDefault();
   var element = event.target;
   if (element.matches(".answerBtn")) {
@@ -122,14 +127,22 @@ function checkAnswer(userAnswer) {
   console.log(userAnswer);
   // compare to actual answer in questions array object
   if (userAnswer === questions[qIndex].answer) {
-      score++;
-      
-  }else {
+    score++;
+    currentScore.textContent = `New Score: ${score}`;
+    qIndex++;
+    askQuestion();
+
+  } else {
     shotClock -= 15;
+    qIndex++;
+    askQuestion();
   }
   //if answer is correct we increment the score -
   //   change color of button if correct/wrong
   //if answer is incorrect reduce time
+
+
+
   //increment qIndex for next question after the first one is answered.
   //if questions array contains the new qIndex will call askQuestion function
   //else the question does not exist in the array then we call gameEnd function
@@ -149,7 +162,7 @@ function checkAnswer(userAnswer) {
 
 function startTime() {
   timer.textContent = shotClock;
-  var timerInterval = setInterval(function() {
+  var timerInterval = setInterval(function () {
     shotClock--;
     timer.textContent = shotClock;
 
@@ -161,6 +174,45 @@ function startTime() {
 }
 // startQuiz();
 
+
 function gameOver() {
   timer.textContent = "Time is up! Lets see how you scored!";
 }
+
+function saveScore() {
+  var savedScores = JSON.parse(localStorage.getItem('highscores')) || [];
+  console.log(savedScores);
+  var newScore = {
+    userName: userName,
+    score: score
+  }
+  savedScores.push(newScore)
+  // savedScore.push({userName, score})
+
+  // sort the saved scores array by score high to low. array.sort()
+
+  localStorage.setItem("highscores", JSON.stringify(savedScores));
+
+}
+
+
+
+
+
+
+
+// start game function 
+function startQuiz() {
+  userName = prompt("Please enter first name to start Quiz");
+  currentName.textContent = `Name: ${userName}`;
+  qIndex = 0;
+  score = 0;
+  
+  startTime();
+  askQuestion();
+}
+
+
+
+
+

@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -14,10 +15,11 @@
 </head>
 
 <body>
+    <div class="container-fluid">
     <div class="container">
         <div class="row" id="headerDiv">
             <div class="col-6">
-                <h1 display-3>Quiz Game</h1>
+                <h1 display-3>WebdeV -QUIZ-</h1>
                 <div id="instructions">
                     <p>Quiz time! Please answer the following multiple choice questions. If you get one wrong 10 seconds
                         will be deducted from the remaining time! Good luck!</p>
@@ -29,14 +31,14 @@
         <div class="row" id="messageDiv">
             <div class="col-6">
                 <p id="message">
-                    js rendered message Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repudiandae
-                    dolore facilis nemo, officiis aliquam.
+                    <p id="currentName" class="fonts"></p>
+                    <p id="currentScore" class="fonts"></p>
 
                 </p>
             </div>
 
             <div class="col-6">
-                <p>Time remaining: <span class="shotClock"></span></p>
+                <p class="fonts">Time remaining: <span class="shotClock"></span></p>
             </div>
         </div>
         <div class="row" id="quizDiv">
@@ -49,6 +51,7 @@
         <div class="row" id="controlDiv">
             <div class="col-12">
                 <button class="btn btn-success" id="startBtn">Start Quiz</button>
+                <button class="btn btn-danger" id="saveBtn">Save Score</button>
 
             </div>
         </div>
@@ -65,14 +68,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                Name:
+                            <td id="savedName">
+                                
                             </td>
-                            <td>
-                                Score:
+                            <td id="newScore">
+                                
                             </td>
-                            <td>
-                                Time and Date:
+                            <td id="captureTime">
+                                
                             </td>
                         </tr>
                     </tbody>
@@ -80,7 +83,7 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
 
 
 
@@ -97,7 +100,7 @@
 
 
 
-    append creating rendering html
+    
 
 
 

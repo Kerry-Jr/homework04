@@ -1,11 +1,56 @@
+.container-fluid {
+	background-color: #333;
+	margin: 0;
+	color: white;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+
+
+
+
+
+
 #headerDiv {
-  border: 2px solid red;
-  margin-bottom: 5rem;
+	border: 2px solid red;
+	margin-bottom: 5rem;
 }
 .col-6 {
-  border: 2px solid red;
+	border: 2px solid red;
 }
 
 #quizDiv {
-  border: 2px solid blue;
+	border: 2px solid blue;
+}
+
+
+
+#currentName {
+	display: inline-block;
+	
+}
+
+#currentScore {
+	display: inline-block;
+	float: right;
+}
+
+.container {
+	background-color: #006699;
+	padding: 3rem;
+	border-radius: 1rem;
+	border: 2px solid black;
+	/* display: flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* flex-direction: column; */
+  }
+
+
+.fonts {
+	font-family: 'Shrikhand', cursive;
 }

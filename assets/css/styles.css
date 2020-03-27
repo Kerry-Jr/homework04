@@ -14,17 +14,15 @@
 
 
 
-
 #headerDiv {
-	border: 2px solid red;
 	margin-bottom: 5rem;
 }
 .col-6 {
-	border: 2px solid red;
+	
 }
 
 #quizDiv {
-	border: 2px solid blue;
+
 }
 
 
@@ -37,6 +35,7 @@
 #currentScore {
 	display: inline-block;
 	float: right;
+	
 }
 
 .container {
@@ -44,13 +43,17 @@
 	padding: 3rem;
 	border-radius: 1rem;
 	border: 2px solid black;
-	/* display: flex; */
-	/* justify-content: center; */
-	/* align-items: center; */
-	/* flex-direction: column; */
+	
   }
 
 
 .fonts {
-	font-family: 'Shrikhand', cursive;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: xx-large;
+}
+
+.fonts1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: xx-large;
+		
 }

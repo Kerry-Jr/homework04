@@ -40,11 +40,12 @@ var questions = [
     answer: "<script>"
   },
   {
-    question: "Where is the correct place to insert a JavaScript?",
+    question: "Where is the correct place to insert external javascript?",
     choices: [
       "Both the <head> section and the <body> section are correct",
       "The <body> section",
-      "the <head> section"
+      "The <head> section",
+      "A <form> tag"
     ],
     answer: "Both the <head> section and the <body> section are correct"
   },
@@ -53,17 +54,18 @@ var questions = [
     choices: [
       "alertbox('hello World')",
       "alert('Hello world')",
-      "msg('Hello World)",
-      "msgBox('Hello World)"
+      "msg('Hello World')",
+      "msgBox('Hello World')"
     ],
-    answer: "alert('Hello World)"
+    answer: "alert('Hello world')"
   },
   {
     question: "How do you create a function in JavaScript?",
     choices: [
       "function:myFunction()",
       "function = myFunction()",
-      "function myFunction()"
+      "function myFunction()",
+      "javascript for dummies?"
     ],
     answer: "function myFunction()"
   },
@@ -72,9 +74,15 @@ var questions = [
     choices: [
       "call function myFunction()",
       "myFunction()",
-      "call myFunction()"
+      "call myFunction()",
+      "Hey function your name is function!"
     ],
     answer: "myFunction()"
+  },
+  {
+    question: "What does NaN stand for in javascript?",
+    choices: ["Song lyrics","Not a name","Not a number","Not anything new"],
+    answer: "Not a number"
   }
 ];
 
@@ -86,12 +94,13 @@ var $div = document.getElementById("message");
 
 
 var qIndex = 0;
-function askQuestion() {
-  $quiz.innerHTML = "";
+  function askQuestion() {
+    $quiz.innerHTML = "";
 
 
   if (!questions[qIndex]) {
     gameOver();
+    
   } else {
     var currentQuestion = questions[qIndex].question;
     var questionBtn = document.createElement("button");
@@ -102,7 +111,7 @@ function askQuestion() {
       for (var i = 0; i < currentChoices.length; i++) {
         var choiceBtn = document.createElement("button");
         choiceBtn.textContent = currentChoices[i];
-        choiceBtn.className = "btn btn-outline-danger btn-lg btn-block answerBtn";
+        choiceBtn.className = "btn btn-primary btn-lg btn-block answerBtn";
         $quiz.appendChild(choiceBtn);
     }
 
@@ -169,6 +178,7 @@ function startTime() {
     if (shotClock === -1) {
       clearInterval(timerInterval);
       gameOver();
+      alert(`You got ${score} out of 10 correct, ${userName}`);
     }
   }, 1000);
 }
@@ -177,6 +187,8 @@ function startTime() {
 
 function gameOver() {
   timer.textContent = "Time is up! Lets see how you scored!";
+  shotClock = 0;
+  
 }
 
 function saveScore() {
@@ -207,7 +219,6 @@ function startQuiz() {
   currentName.textContent = `Name: ${userName}`;
   qIndex = 0;
   score = 0;
-  
   startTime();
   askQuestion();
 }

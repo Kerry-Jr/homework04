@@ -10,32 +10,17 @@
   }
 
 
-
-
-
-
 #headerDiv {
 	margin-bottom: 5rem;
 }
-.col-6 {
-	
-}
-
-#quizDiv {
-
-}
-
-
 
 #currentName {
-	display: inline-block;
-	
+	display: inline-block;	
 }
 
 #currentScore {
 	display: inline-block;
 	float: right;
-	
 }
 
 .container {
@@ -43,10 +28,7 @@
 	padding: 3rem;
 	border-radius: 1rem;
 	border: 2px solid black;
-	
   }
-
-
 .fonts {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: xx-large;

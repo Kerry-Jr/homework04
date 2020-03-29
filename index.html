@@ -10,12 +10,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <title>Javascript Quiz</title>
 </head>
-
 <body>
-    <div class="container-fluid">
+<div class="container-fluid">
     <div class="container">
         <div class="row" id="headerDiv">
             <div class="col-8">
@@ -25,58 +23,43 @@
                         will be deducted from the remaining time! Good luck!</p>
                 </div>
             </div>
-
         </div>
-        <!-- will not display until startquiz function starts display none css - js= display block at start of func -->
-        <div class="row" id="messageDiv">
-            <div class="col-4">
-                <p id="message">
-                    <p id="currentName" class="fonts"></p>
+    <div class="row" id="messageDiv">
+        <div class="col-4">
+            <p id="message">
+                <p id="currentName" class="fonts"></p>
                     <p id="currentScore" class="fonts"></p>
-
                 </p>
             </div>
-
-            <div class="col-6">
-                <p class="fonts1">Time remaining: <span class="shotClock"></span></p>
+                <div class="col-6">
+                    <p class="fonts1">Time remaining: <span class="shotClock"></span></p>
+                </div>
             </div>
-        </div>
         <div class="row" id="quizDiv">
             <div class="col-8 offset-2" id="quiz">
-                <!-- js to render question and choices and then appends to html. after question and choices is answered then
-                .innerHTML set it to empty string clear innerHTML -->
-            </div>
         </div>
-
-        <div class="row" id="controlDiv">
-            <div class="col-12">
-                <button class="btn btn-success" id="startBtn">Start Quiz</button>
-                <button class="btn btn-danger" id="saveBtn">Save Score</button>
-
-            </div>
-        </div>
-
-        <div class="row" id="scoreboardDiv">
-            <div class="col-12">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-
-                            </th>
-                        </tr>
-                    </thead>
+    </div>
+<div class="row" id="controlDiv">
+    <div class="col-12">
+        <button class="btn btn-success" id="startBtn">Start Quiz</button>
+        <button class="btn btn-danger" id="saveBtn">Save Score</button>
+    </div>
+</div>
+    <div class="row" id="scoreboardDiv">
+        <div class="col-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <p id="post"></p>
+                        </th>
+                    </tr>
+                </thead>
                     <tbody>
                         <tr>
-                            <td id="savedName">
-                                
-                            </td>
-                            <td id="newScore">
-                                
-                            </td>
-                            <td id="captureTime">
-                                
-                            </td>
+                            <td id="savedName"></td>
+                            <td id="newScore"></td>
+                            <td id="captureTime">&copy; Kerry Smith 03/2020</td>
                         </tr>
                     </tbody>
                 </table>
@@ -84,33 +67,7 @@
         </div>
     </div>
 </div>
-
-
-
-    <!-- 
-       1. Header section - game instructions, page title.
-       2. Message div -  1. div for message output and another (2) div for time -----answer feedback with time remaining - comminicating message to user dynamic
-       3. Quiz div - blank div render Q&A in JS 
-       4. Controls div - including start button, view high scores button,  saved score - user clicks
-       5. Print scoreboard div 
-    -->
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    <script src="./assets/js/script.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -121,5 +78,4 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -7,20 +7,19 @@
 	justify-content: center;
 	align-items: center;
 	font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
+}
 
 #headerDiv {
 	margin-bottom: 5rem;
 }
 
 #currentName {
-	display: inline-block;	
+	display: inline-block;
 }
 
 #currentScore {
 	display: inline-block;
-	float: right;
+	/* float: right; */
 }
 
 .container {
@@ -28,15 +27,19 @@
 	padding: 3rem;
 	border-radius: 1rem;
 	border: 2px solid black;
-  }
+}
 .fonts {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: xx-large;
+	font-size: large;
 }
 
-.fonts1 {
-	font-family: 'Ubuntu', sans-serif;
-	font-size: xx-large;
-		
+.btn {
+	margin: 10px 15px;
 }
 
+li {
+	color: black;
+}
+.btn-success {
+	pointer-events: none;
+}

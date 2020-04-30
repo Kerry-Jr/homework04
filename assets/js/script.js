@@ -6,7 +6,7 @@ var savedName = document.querySelector("#savedName");
 var currentScore = document.querySelector("#currentScore");
 var currentName = document.querySelector("#currentName");
 var postScore = document.querySelector("#post");
-var highscore = document.getElementById('scoreBoard')
+var highscore = document.getElementById('scoreBoard');
 var $scoreBoard = document.querySelector("#scoreboardDiv");
 var $showScore = document.getElementById("showScore");
 var $quiz = document.getElementById("quiz");
@@ -191,15 +191,16 @@ function restartQuiz() {
 }
 
 onload();
+
 highscore.addEventListener("click", function (event) {
     event.preventDefault();
 
     if (isShowing) {
         $($showScore).hide();
-        isShowing = false;
+        isShowing !== false;
     } else {
         $($showScore).show();
-        isShowing = true;
+        isShowing !== true;
     }
 })
 
